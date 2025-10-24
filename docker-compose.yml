@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+  client:
+    image: avantikaaa/finance-tracker-client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+
+  server:
+    image: avantikaaa/finance-tracker-server
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - /home/avi/Desktop/spe/finance-tracker/data/db:/data/db:rw
