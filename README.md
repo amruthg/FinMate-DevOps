@@ -9,8 +9,8 @@ pipeline {
     
     environment {
         registryCredential = "docker_credentials"
-        BACKEND_IMAGE = 'avantikaaa/finance-tracker-server'
-        FRONTEND_IMAGE = 'avantikaaa/finance-tracker-client'
+        BACKEND_IMAGE = 'amruthg/finance-tracker-server'
+        FRONTEND_IMAGE = 'amruthg/finance-tracker-client'
         serverImage = ""
         clientImage = ""
     }
@@ -19,7 +19,7 @@ pipeline {
         stage('Git Pull') {
             steps {
                 // Pulls code from my github repo
-                git url: 'https://github.com/avantikaaa/finance-tracker.git', branch: 'main'
+                git url: 'https://github.com/amruthg/finance-tracker.git', branch: 'main'
             }
         }
         stage('Build Backend Image') {
